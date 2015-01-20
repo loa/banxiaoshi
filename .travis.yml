@@ -1,0 +1,16 @@
+language: python
+python:
+- '3.4'
+branches:
+  only:
+  - master
+install:
+- pip install -r requirements.txt
+script: |
+  bash -e run.sh
+before_install:
+- openssl aes-256-cbc -K $encrypted_d94f59a094d9_key -iv $encrypted_d94f59a094d9_iv
+  -in encrypt.rsa.enc -out encrypt.rsa -d
+env:
+  global:
+    secure: u4VrW3tYtm0lcg6yXXY03T9iwzygPY7JVYT4aeoBW6kWVgHM5CH5drz0Es+GWYNB8rglK5ASIFSyYXMLbjoLJmn3wT5oYquoh3J1rDoB1/Z7Nj7PJM5j76w4mwP9qGzo7DhNlZBUAU5wPOlp1pnl5jsIYOYEhcil7uUIteBQjHY=
