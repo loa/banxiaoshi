@@ -86,7 +86,7 @@ def get_days(token, start_date, end_date):
 
 def decrypt_password(password):
     return subprocess.check_output(
-        "echo '%s' | base64 --decode | openssl rsautl -decrypt -inkey encrypt.rsa" % password,
+        "echo '%s' | base64 --decode | openssl rsautl -decrypt -inkey encrypt/private_rsa" % password,
         shell=True,
         env=os.environ.copy()).decode('UTF-8')
 

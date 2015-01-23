@@ -6,4 +6,4 @@
 
 Add users by adding them into users.yaml. Password is your regular skritter password but encrypted with rsa.
 
-    echo -n "your_skritter_password" | openssl rsautl -encrypt -pubin -inkey encrypt.pem | base64
+    echo -n "your_skritter_password" | openssl rsautl -encrypt -pubin -inkey encrypt/public_rsa.pem | base64

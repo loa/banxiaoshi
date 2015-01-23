@@ -12,8 +12,11 @@ rm -rf data gh-pages
 git clone --single-branch -b data "https://${GH_TOKEN}@github.com/loa/banxiaoshi.git" data
 mkdir gh-pages
 
-# Generate banxiaoshi pages
-./banxiaoshi.py
+# Collect data from Skritter API
+python3 banxiaoshi/collect_data.py
+
+# Generate static webpage
+python3 banxiaoshi/generate_static.py
 
 # Push updates to data branch
 cd data/
